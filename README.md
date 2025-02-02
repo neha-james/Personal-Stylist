@@ -1,3 +1,4 @@
+![qwe](https://github.com/user-attachments/assets/6d53927e-e8dd-4376-8f0f-5c3262953814)
 # Personal-Stylist
 Unlock your beauty potential 
 Personal Stylist Mini Project
@@ -46,5 +47,6 @@ This project utilizes:
    
  ## Screenshots
 
-![Personal Stylist Screenshot](screenshots/screenshot.png)
+![Personal Stylist Screenshote](https://github.com/user-attachments/assets/f480e758-773c-42b8-bda2-6bb3929575ad)
+
 
