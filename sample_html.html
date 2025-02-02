@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Stylist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="output-onlinepngtools.png" alt="Personal Stylist Logo"> <!-- Logo image -->
+    </div>
+    <h1>Welcome to Personal Stylist</h1>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2>Enter Your Details</h2>
+      <form id="stylistForm">
+        <div class="form-group">
+          <label for="faceShape">Face Shape:</label>
+          <select id="faceShape">
+            <option value="round">Round</option>
+            <option value="oval">Oval</option>
+            <option value="square">Square</option>
+            <option value="heart">Heart</option>
+            <option value="diamond">Diamond</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="hairTexture">Hair Texture:</label>
+          <select id="hairTexture">
+            <option value="straight">Straight</option>
+            <option value="wavy">Wavy</option>
+            <option value="curly">Curly</option>
+            <option value="kinky">Kinky</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="bodyType">Body Type:</label>
+          <select id="bodyType">
+            <option value="lean">Lean</option>
+            <option value="fat">Fat</option>
+            <option value="tall">Tall</option>
+            <option value="short">Short</option>
+            <option value="athletic">Athletic</option>
+          </select>
+        </div>
+
+        <button type="submit">Get Recommendations</button>
+      </form>
+    </section>
+
+    <section class="output-section">
+      <h2>Your Style Recommendations</h2>
+      <div id="recommendations">
+        <!-- Recommendations will appear here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Personal Stylist. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("stylistForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent the form from submitting
+
+  // Get values from the form
+  const faceShape = document.getElementById("faceShape").value;
+  const hairTexture = document.getElementById("hairTexture").value;
+  const bodyType = document.getElementById("bodyType").value;
+
+  // Generate style recommendations based on user input
+  const recommendations = generateRecommendations(faceShape, hairTexture, bodyType);
+
+  // Display the recommendations
+  document.getElementById("recommendations").innerHTML = recommendations;
+});
+
+// Function to generate recommendations based on input
+function generateRecommendations(faceShape, hairTexture, bodyType) {
+  let hairstyle = "";
+  let dressType = "";
+  let ornaments = "";
+
+  // Facial feature recommendations
+  if (faceShape === "round") {
+    hairstyle = "Long layers with volume, side bangs to elongate the face.";
+  } else if (faceShape === "oval") {
+    hairstyle = "Most styles work, try short or medium-length cuts.";
+  } else if (faceShape === "square") {
+    hairstyle = "Soft, layered haircuts or curls to soften angular features.";
+  } else if (faceShape === "heart") {
+    hairstyle = "Side-swept bangs with soft waves to balance the forehead.";
+  } else if (faceShape === "diamond") {
+    hairstyle = "Curly or wavy hair that frames the face.";
+  }
+
+  // Hair texture-based dress recommendations
+  if (hairTexture === "straight") {
+    dressType = "Straight hair pairs well with sleek, modern outfits like tailored dresses or suits.";
+  } else if (hairTexture === "wavy") {
+    dressType = "Soft, flowing dresses or casual chic outfits complement wavy hair.";
+  } else if (hairTexture === "curly") {
+    dressType = "Opt for boho-style dresses or relaxed, casual outfits.";
+  } else if (hairTexture === "kinky") {
+    dressType = "Try bold, statement outfits with vibrant patterns or textures.";
+  }
+
+  // Body type-based ornament recommendations
+  if (bodyType === "lean") {
+    ornaments = "Go for delicate jewelry, like thin necklaces or small studs.";
+  } else if (bodyType === "fat") {
+    ornaments = "Statement earrings or chunky bracelets work well to draw attention.";
+  } else if (bodyType === "tall") {
+    ornaments = "Long, layered necklaces and large earrings would suit you.";
+  } else if (bodyType === "short") {
+    ornaments = "Short necklaces and delicate jewelry will highlight your features.";
+  } else if (bodyType === "athletic") {
+    ornaments = "Bold accessories, like geometric necklaces or cuff bracelets.";
+  }
+
+  // Return all recommendations as a formatted string
+  return `
+    <p><strong>Hairstyle Recommendation:</strong> ${hairstyle}</p>
+    <p><strong>Dress Type Recommendation:</strong> ${dressType}</p>
+    <p><strong>Ornaments Recommendation:</strong> ${ornaments}</p>
+  `;
+}
+
+  </script>
+</body>
+</html>
